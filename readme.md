@@ -2,7 +2,7 @@
 
 ![screenshot](https://github.com/fsefidabi/3d-audio-visualizer/blob/master/static/screenshot.png)
 
-Live: https://3d-audio-visualizer.vercel.app
+Live: https://3d-audio-visualizer-sphere.vercel.app
 
 ## Getting Started
 
