@@ -10,7 +10,18 @@ canvas {
     height: 100%;
 }
 
-#audio-control-button {
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(40, 43, 44, 0.68);
+    transition: 0.7s;
+    z-index: 1;
+}
+
+#pause-button {
     width: 60px;
     height: 60px;
     position: fixed;
@@ -20,16 +31,35 @@ canvas {
     border-radius: 50%;
     padding: 0;
     box-shadow: 0 0 10px 0 #c9d2d9;
-    background: rgb(237, 228, 252) url("./play.png");
+    background: rgb(237, 228, 252) url("./pause.png");
     background-size: cover;
     cursor: pointer;
     transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
 
     &:hover {
         box-shadow: 0 0 10px 2px #c9d2d9;
     }
 }
 
-#audio-control-button input {
-    display: none
+#play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    outline: none;
+    border: 1px solid #FFFFFF;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 2;
+
+    &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
 }

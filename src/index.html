@@ -9,33 +9,38 @@
   <body>
     <canvas class="webgl"></canvas>
 
-    <label id="audio-control-button" for="audio-control">
-      <input
-          type="checkbox"
-          id="audio-control"
-          name="audio"
-      />
-    </label>
+    <div id="overlay"></div>
+
+    <button id="play-button" onclick="handlePlayAudio()">Play Music</button>
+
+    <button id="pause-button" onclick="handlePauseAudio()"></button>
 
     <script type="module" src="./script.js"></script>
     <script>
-        document.getElementById("audio-control-button").style.background = "#e5e5ff url('./play.png')"
-        document.getElementById("audio-control-button").style.backgroundSize = "cover"
-
-        document.getElementById("audio-control").addEventListener("change", function handleAudioControlChange(event) {
-            event.target.checked ? handlePlayAudio() : handlePauseAudio()
-        })
-
         function handlePlayAudio() {
             window.dispatchEvent(new CustomEvent("play-audio"))
-            document.getElementById("audio-control-button").style.background = "#e5e5ff url('./pause.png')"
-            document.getElementById("audio-control-button").style.backgroundSize = "cover"
+
+            document.getElementById("overlay").style.opacity = "0"
+            document.getElementById("overlay").style.visibility = "hidden"
+
+            document.getElementById("play-button").style.opacity = "0"
+            document.getElementById("play-button").style.visibility = "hidden"
+
+            document.getElementById("pause-button").style.opacity = "1"
+            document.getElementById("pause-button").style.visibility = "visible"
         }
 
         function handlePauseAudio() {
             window.dispatchEvent(new CustomEvent("pause-audio"))
-            document.getElementById("audio-control-button").style.background = "#e5e5ff url('./play.png')"
-            document.getElementById("audio-control-button").style.backgroundSize = "cover"
+
+            document.getElementById("overlay").style.opacity = "1"
+            document.getElementById("overlay").style.visibility = "visible"
+
+            document.getElementById("play-button").style.opacity = "1"
+            document.getElementById("play-button").style.visibility = "visible"
+
+            document.getElementById("pause-button").style.opacity = "0"
+            document.getElementById("pause-button").style.visibility = "hidden"
         }
     </script>
   </body>
