@@ -17,6 +17,9 @@
 
     <script type="module" src="./script.js"></script>
     <script>
+        document.getElementById("pause-button").style.background = "#e5e5ff url('./pause.png')"
+        document.getElementById("pause-button").style.backgroundSize = "cover"
+
         function handlePlayAudio() {
             window.dispatchEvent(new CustomEvent("play-audio"))
 
