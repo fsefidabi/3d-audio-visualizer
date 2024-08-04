@@ -16,8 +16,8 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(40, 43, 44, 0.68);
-    transition: 0.7s;
+    background-color: rgba(25, 26, 26, 0.9);
+    transition: 1s;
     z-index: 1;
 }
 
