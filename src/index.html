@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d Audio Visualizer</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <label id="audio-control-button" for="audio-control">
+      <input
+          type="checkbox"
+          id="audio-control"
+          name="audio"
+      />
+    </label>
+
+    <script type="module" src="./script.js"></script>
+    <script>
+        document.getElementById("audio-control").addEventListener("change", function handleAudioControlChange(event) {
+            event.target.checked ? handlePlayAudio() : handlePauseAudio()
+        })
+
+        function handlePlayAudio() {
+            window.dispatchEvent(new CustomEvent("play-audio"))
+            document.getElementById("audio-control-button").style.background = "#e5e5ff url('./pause.png')"
+            document.getElementById("audio-control-button").style.backgroundSize = "cover"
+        }
+
+        function handlePauseAudio() {
+            window.dispatchEvent(new CustomEvent("pause-audio"))
+            document.getElementById("audio-control-button").style.background = "#e5e5ff url('./play.png')"
+            document.getElementById("audio-control-button").style.backgroundSize = "cover"
+        }
+    </script>
+  </body>
+</html>
