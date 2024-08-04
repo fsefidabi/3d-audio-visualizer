@@ -19,6 +19,9 @@
 
     <script type="module" src="./script.js"></script>
     <script>
+        document.getElementById("audio-control-button").style.background = "#e5e5ff url('./play.png')"
+        document.getElementById("audio-control-button").style.backgroundSize = "cover"
+
         document.getElementById("audio-control").addEventListener("change", function handleAudioControlChange(event) {
             event.target.checked ? handlePlayAudio() : handlePauseAudio()
         })
